@@ -15,7 +15,7 @@
             <div class="navbar-nav ms-auto">
 
                 <!--                show when not logged in-->
-<!--                --><?php //if (!isLoggedIn()): ?>
+                <?php if (!isLoggedIn()): ?>
                     <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'register') ? 'active' : ''; ?> "
                        aria-current="page" href="<?php echo URLROOT ?>/users/register">Register</a>
                     <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'login') ? 'active' : ''; ?>"
@@ -23,29 +23,29 @@
 
                     <!--sita linka pasikeisti priklausomai nuo to kur kursiu-->
                     <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?>"
-                       href="<?php echo URLROOT ?>/users/allPixels">All Pixels</a>
+                       href="<?php echo URLROOT ?>/pixels/allPixels">All Pixels</a>
 
-<!--                --><?php //else: ?>
+                <?php else: ?>
 
                     <!--                show when logged in-->
-<!--                    <a disabled class=" nav-link text-white" href="#">Welcom : --><?php //echo $_SESSION['userName'] ?><!--</a>-->
+                    <a disabled class=" nav-link text-white" href="#">Welcome : <?php echo $_SESSION['userName'] ?></a>
 
-                    <!--pasikeisti linkus nuo to kursiu-->
+<!--                    pasikeisti linkus nuo to kursiu-->
 
-<!--                    <a class="nav-link --><?php //echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?><!--"-->
-<!--                       href="--><?php //echo URLROOT ?><!--/users/allPixels">All Pixels</a>-->
-<!---->
-<!--                    <a class="nav-link --><?php //echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?><!--"-->
-<!--                       href="--><?php //echo URLROOT ?><!--/users/allPixels">My Pixels</a>-->
-<!---->
-<!--                    <a class="nav-link --><?php //echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?><!--"-->
-<!--                       href="--><?php //echo URLROOT ?><!--/users/allPixels">Add New Pixel</a>-->
-<!---->
-<!--                    <a class="nav-link --><?php //echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?><!--"-->
-<!--                       href="--><?php //echo URLROOT ?><!--/users/allPixels">Activity Log</a>-->
-<!---->
-<!--                    <a class="nav-link" href="--><?php //echo URLROOT ?><!--/users/logout">Logout</a>-->
-<!--                --><?php //endif; ?>
+                    <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'allPixels') ? 'active' : ''; ?>"
+                       href="<?php echo URLROOT ?>/pixels/allPixels">All Pixels</a>
+
+                    <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'myPixels') ? 'active' : ''; ?>"
+                       href="<?php echo URLROOT ?>/pixels/myPixels">My Pixels</a>
+
+                    <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'addPixel') ? 'active' : ''; ?>"
+                       href="<?php echo URLROOT ?>/pixels/addPixel">Add New Pixel</a>
+
+                    <a class="nav-link <?php echo (isset($data['currentPage']) && $data['currentPage'] === 'activityLog') ? 'active' : ''; ?>"
+                       href="<?php echo URLROOT ?>/pixels/activityLog">Activity Log</a>
+
+                    <a class="nav-link" href="<?php echo URLROOT ?>/users/logout">Logout</a>
+                <?php endif; ?>
 
             </div>
         </div>
