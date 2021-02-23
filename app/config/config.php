@@ -7,9 +7,9 @@ define('DB_NAME', 'pixel');
 
 
 //approot wil be used when we need absolute path to our app dir.(kelias iki app folderio)
-define('APPROOT', dirname(dirname(__FILE__)));
+//define('APPROOT', dirname(dirname(__FILE__)));
 //define('APPROOT', dirname(__FILE__, 2));
-//define('APPROOT', dirname(__DIR__));
+define('APPROOT', dirname(__DIR__));
 
 
 //url ROOT will be the path in the url(kelias iki public folderio)
