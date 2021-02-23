@@ -1,0 +1,117 @@
+/*range start*/
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 20px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #434343;
+    border-radius: 25px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #a5a5a5;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #545454;
+}
+
+.range-wrap {
+    width: 500px;
+    position: relative;
+}
+
+.range-value {
+    position: absolute;
+    top: -50%;
+}
+
+.range-value span {
+    width: 30px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background: #545454;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 6px;
+}
+
+.range-value span:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #545454;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+
+/*range end*/
+
+/*pixel board start */
+
+.pixelBoard {
+    border: 1px solid #cdcdcd;
+    margin: 50px auto;
+    height: 500px;
+    width: 500px;
+    /*background-image: url("../img/repeated-square.png");*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    box-sizing: content-box;
+}
+
+.pixel {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+}
+
+.red {
+    background-color: #9d0000;
+
+}
+
+.green {
+    background-color: #006700;
+
+}
+
+.blue {
+    background-color: #0026c1;
+
+}
+
+.yellow {
+    background-color: #c6a500;
+
+}
+
+/*pixel board end */
