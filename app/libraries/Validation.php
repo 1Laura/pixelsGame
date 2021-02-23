@@ -34,11 +34,14 @@ class Validation
             // empty field
             return "Please enter your Name";
         }
-        if (!preg_match("/^[a-z ,.'-]+$/i", $name)) {
+//        if (!preg_match("/^[a-z ,.'-]+$/i", $name)) {
+        if (!preg_match("/^\p{L}+$/ui", $name)) {
             return "Name must only contain Name characters";
         }
         //falsy
         return '';
+
+        //  /^\p{L}+$/ui
     }
 
     //email validation
@@ -120,7 +123,6 @@ class Validation
             return 'Email not found';
         }
         return '';
-
     }
 
     public function validateEmpty($field, $msg)
