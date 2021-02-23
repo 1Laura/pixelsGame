@@ -25,7 +25,7 @@ class Controller
     {
         //check if view exists
         if (file_exists("../app/views/$view.php")) {
-            //if view exist we requirw it
+            //if view exist we require it
             //we load this view
             require_once "../app/views/$view.php";
         } else {
