@@ -11,6 +11,7 @@
 class Users extends Controller
 {
     private $userModel;
+
     private Validation $vld;
 
     public function __construct()
@@ -23,17 +24,12 @@ class Users extends Controller
 
     public function index()
     {
-
-        //pasikeisti gal redirect to all pixels?
-        $data = [
-            'welcome' => 'labas is users index page'
-        ];
-
-        $this->view('users/register', $data);
+        $this->view('/pixels');
     }
 
     public function register()
     {
+
         if ($this->vld->ifRequestIsPostAndSanitize()) {
             $data = [
                 'name' => trim($_POST['name']),
@@ -96,7 +92,8 @@ class Users extends Controller
                     'emailErr' => '',
                     'passwordErr' => '',
                     'confirmPasswordErr' => '',],
-                'currentPage' => 'register'];
+                'currentPage' => 'register'
+            ];
 
             //load view paduodam
             $this->view('users/register', $data);
@@ -128,7 +125,7 @@ class Users extends Controller
                     //create session
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data['errors']['passwordErr'] = 'Wrong password or email';
+                    $data['errors']['passwordErr'] = 'Wrong password';
                     //load view with errors
                     $this->view('users/login', $data);
                 }
@@ -147,17 +144,18 @@ class Users extends Controller
                     'emailErr' => '',
                     'passwordErr' => '',
                 ],
+                'currentPage' => 'login'
             ];
-            $data['currentPage'] = 'login';
+//            $data['currentPage'] = 'login';
             //load view paduodam
             $this->view('users/login', $data);
         }
 
     }
 
-    private function createUserSession($loggedInUser): void
+    private function createUserSession($loggedInUser)
     {
-        $_SESSION['userId'] = $loggedInUser->id;
+        $_SESSION['userId'] = $loggedInUser->userId;
         $_SESSION['userName'] = $loggedInUser->name;
         $_SESSION['userEmail'] = $loggedInUser->email;
 
